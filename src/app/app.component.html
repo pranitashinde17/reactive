@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row">
+<div class="form_bg">
+<form [formGroup]='signupForm' (ngSubmit)="postData(signupForm)">
+<h2 class="text-center">Sign Up</h2>
+<br/>
+
+<div class="form-group">
+<input type="text" formControlName='fname' placeholder="First Name"/>
+<!--<p *ngIf="signupForm.control['fname'].haserror(required)">
+First Name Required!!!</p>-->
+</div>
+<br/>
+
+<div class="form-group">
+<input type="text" formControlName='lname' placeholder="Last Name"/>
+</div>
+<br/>
+
+<div class="form-group">
+<input type="email" formControlName='Emailid' placeholder="Eamil"/>
+</div>
+<br/>
+
+<div class="form-group">
+<input type="password" formControlName='userpassword' placeholder="Password"/>
+</div>
+
+<br/><br/>
+
+<div class="align-center">
+  <button input type="submit" (click)="postData()" [disabled]='!signupForm.
+  valid'>Submit</button>
+
+ <button type="button" (click)="resetForm()">Reset</button>
+</div>
+<br/>
+
+</form>
+</div>
+</div>
+</div>
+<p>{{signupForm.value | json}}</p>
